@@ -1,6 +1,7 @@
 package com.example.designbookmyshow.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +15,7 @@ public class Ticket extends BaseModel{
     @ManyToOne
     private User user;
     @ManyToMany(mappedBy = "ticket")
-    private List<ShowSeat> showSeats;
+    private List<ShowSeat> showSeats=new ArrayList<>();
     @Enumerated(EnumType.STRING)
     private BookingStatus bookingStatus;
     @OneToMany(mappedBy = "ticket")

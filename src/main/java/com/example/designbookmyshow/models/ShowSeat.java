@@ -19,4 +19,5 @@ public class ShowSeat extends BaseModel{
     private SeatStatus seatStatus;
     @ManyToMany
     private List<Ticket> ticket;
+
 }

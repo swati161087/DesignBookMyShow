@@ -1,6 +1,7 @@
 package com.example.designbookmyshow.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +13,7 @@ public class Auditorium extends BaseModel{
     private int capacity;
     @ManyToOne
     private Theater theater;
-    @OneToMany(mappedBy = "auditorium")
+    @OneToMany(mappedBy = "auditorium",fetch = FetchType.EAGER)
     private List<Seat> seats;
     @ElementCollection
     @Enumerated(EnumType.STRING)
